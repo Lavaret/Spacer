@@ -1,0 +1,47 @@
+<style lang="scss" scoped>
+
+input {
+  height: 30px;
+  border: 0;
+  margin-top: 50px;
+  width: 250px;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  border-bottom: 1px solid white;
+  background: none;
+  transition: box-shadow .5s ease-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 14px 20px -8px rgba(255, 255, 255, .45);
+}
+
+</style>
+
+<template>
+
+<input type="text" id="search" name="search" :value="value" @input="handleChange" />
+
+</template>
+
+<script>
+
+export default {
+  name: 'SearchInput',
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    handleChange(e) {
+      this.$emit('input', e.target.value);
+    },
+  },
+};
+
+</script>
