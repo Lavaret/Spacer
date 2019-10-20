@@ -12,20 +12,31 @@
 </template>
 
 <script>
- export default {
-   name: 'Claim'
- };
+export default {
+  name: 'Claim',
+};
 
 </script>
 
 <style lang="scss" scoped>
 
-  .claim-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
+.subclaim {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.claim {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.claim-wrapper {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
 
 </style>
