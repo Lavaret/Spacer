@@ -1,9 +1,6 @@
 <template>
 
 <div id="app">
-    <div class="nav">
-        <router-link to="/">spacer</router-link>
-    </div>
     <router-view />
 </div>
 
@@ -17,6 +14,8 @@
   }
 
   body {
+    margin: 0;
+    padding: 0;
     font-family: "Montserrot", sans-serif;
   }
 </style>
