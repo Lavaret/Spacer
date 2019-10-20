@@ -34,7 +34,14 @@ input:focus {
 
 <template>
 
-<input type="text" id="search" name="search" :class="{ dark }" :value="value" @input="handleChange" />
+<input
+  type="text"
+  id="search"
+  name="search"
+  :class="{ dark }"
+  :value="value"
+  @input="handleChange"
+/>
 
 </template>
 
@@ -50,7 +57,7 @@ export default {
     dark: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   methods: {
     handleChange(e) {

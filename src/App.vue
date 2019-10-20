@@ -47,7 +47,24 @@ body {
   .logo {
     position: absolute;
     top: 30px;
+    left: 30px;
     height: 100px;
+
+    @media (max-width: 768px) {
+      top: 30px;
+      height: 20px;
+    }
+  }
+
+  .results {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
 
@@ -64,8 +81,8 @@ body {
   <transition name="fade">
     <HeroImage v-if="step === 0" />
   </transition>
-  <div class="results">
-    
+  <div class="results" v-if="results && !loading && step === 1">
+    <Item v-for="item in results" :item="item" :key="item.data[0].nasa_id"/>
   </div>
 </div>
 
@@ -78,6 +95,7 @@ import debounce from 'lodash.debounce';
 import Claim from './components/Claim.vue';
 import SearchInput from './components/SearchInput.vue';
 import HeroImage from './components/HeroImage.vue';
+import Item from './components/Item.vue';
 
 const API = 'https://images-api.nasa.gov/search';
 
@@ -88,6 +106,7 @@ export default {
     Claim,
     SearchInput,
     HeroImage,
+    Item,
   },
 
   data() {
